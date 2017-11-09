@@ -1,7 +1,10 @@
+import Routes from "./Routes";
 import React, { Component } from 'react';
+import RouteNavItem from "./components/RouteNavItem";
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
 import './App.css';
+import { Route } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -27,14 +30,14 @@ class App extends Component {
                     >
                         <div style={{ height: 32, background: "#333", borderRadius: 6, margin: 16 }} />
                         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                            <Menu.Item key="1">
+                            <RouteNavItem key="1" href="/test">
                                 <Icon type="pie-chart" />
                                 <span>Option 1</span>
-                            </Menu.Item>
-                            <Menu.Item key="2">
+                            </RouteNavItem>
+                            <RouteNavItem key="2" href="/ping">
                                 <Icon type="desktop" />
                                 <span>Option 2</span>
-                            </Menu.Item>
+                            </RouteNavItem>
                             <SubMenu
                                 key="sub1"
                                 title={<span><Icon type="user" /><span>User</span></span>}
@@ -71,6 +74,7 @@ class App extends Component {
                         </Footer>
                     </Layout>
                 </Layout>
+                <Routes />
             </div>
         );
     }
