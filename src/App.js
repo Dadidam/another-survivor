@@ -29,7 +29,15 @@ class App extends Component {
                         collapsed={this.state.collapsed}
                         onCollapse={this.onCollapse}
                     >
-                        <div style={{ height: 32, background: "#333", borderRadius: 6, margin: 16 }} />
+                        {!this.state.collapsed &&
+                            <div style={{ background: "#333", borderRadius: 6, margin: 16 }}>
+                                <Link to="/">
+                                    <div style={{ textAlign: "center", padding: 10 }}>
+                                        <img src="/img/logo_02.png" alt="" />
+                                    </div>
+                                </Link>
+                            </div>
+                        }
                         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                             <Menu.Item key={1}>
                                 <Link to="/">
@@ -85,7 +93,7 @@ class App extends Component {
                         </Footer>
                     </Layout>
                 </Layout>
-                
+
             </div>
         );
     }
