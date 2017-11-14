@@ -78,18 +78,14 @@ class App extends Component {
                             </Menu.Item>
                         </Menu>
                     </Sider>
-                    <Layout>
-                        <Content style={{ margin: '0 16px' }}>
-                            <Breadcrumb style={{ margin: '16px 0' }}>
-                                <Breadcrumb.Item>User</Breadcrumb.Item>
-                                <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                            </Breadcrumb>
-                            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                    <Layout style={{ background: '#404040'}}>
+                        <Content style={{ margin: 16 }}>
+                            <div style={{ padding: 24, background: '#333', minHeight: 360, borderRadius: 6 }}>
                                 <Routes />
                             </div>
                         </Content>
-                        <Footer style={{ textAlign: 'center' }}>
-                            Ant Design ©2016 Created by Ant UED
+                        <Footer style={{ textAlign: 'center', background: '#404040', color: 'white' }}>
+                            Another Survivor Game ©2017 Created by <a href="https://github.com/Dadidam/another-survivor" target="_blank">Dadidam</a>
                         </Footer>
                     </Layout>
                 </Layout>
