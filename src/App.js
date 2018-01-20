@@ -1,11 +1,14 @@
 import Routes from "./Routes";
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import RouteNavItem from "./components/RouteNavItem";
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
 import './App.css';
 import { Route } from "react-router-dom";
+
+import { initUser } from './actions';
 
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -21,6 +24,8 @@ class App extends Component {
     }
 
     render() {
+        const user = this.props.user;
+        console.log(user)
         return (
             <div>
                 <Layout style={{ minHeight: '100vh' }}>
@@ -78,14 +83,14 @@ class App extends Component {
                             </Menu.Item>
                         </Menu>
                     </Sider>
-                    <Layout style={{ background: '#404040'}}>
+                    <Layout style={{ background: '#404040' }}>
                         <Content style={{ margin: 16 }}>
                             <div style={{ padding: 24, background: '#333', minHeight: 360, borderRadius: 6 }}>
                                 <Routes />
                             </div>
                         </Content>
                         <Footer style={{ textAlign: 'center', background: '#404040', color: 'white' }}>
-                            Another Survivor Game ©2017 Created by <a href="https://github.com/Dadidam/another-survivor" target="_blank">Dadidam</a>
+                            Another Survivor Game ©2017-2018 Created by <a href="https://github.com/Dadidam/another-survivor" target="_blank">Dadidam</a>
                         </Footer>
                     </Layout>
                 </Layout>
@@ -95,4 +100,8 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps({ user }) {
+    return { user };
+}
+
+export default connect(mapStateToProps, { initUser })(App);

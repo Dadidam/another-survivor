@@ -4,12 +4,21 @@ import { BrowserRouter as Router } from "react-router-dom";
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import reducers from './reducers';
+
 import './index.css';
 
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
 ReactDOM.render(
-    <Router>
-        <App />
-    </Router>,
-    document.getElementById('root'));
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>,
+    document.getElementById('root')
+);
     
 registerServiceWorker();
