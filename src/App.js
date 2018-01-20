@@ -2,15 +2,15 @@ import Routes from "./Routes";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
-import RouteNavItem from "./components/RouteNavItem";
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+// import RouteNavItem from "./components/RouteNavItem";
+import { Layout, Menu, Icon } from 'antd';
 
 import './App.css';
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
 import { initUser } from './actions';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class App extends Component {
@@ -90,7 +90,7 @@ class App extends Component {
                             </div>
                         </Content>
                         <Footer style={{ textAlign: 'center', background: '#404040', color: 'white' }}>
-                            Another Survivor Game ©2017-2018 Created by <a href="https://github.com/Dadidam/another-survivor" target="_blank">Dadidam</a>
+                            Another Survivor Game ©2017-2018 Created by <a href="https://github.com/Dadidam/another-survivor" target="_blank" rel="noopener noreferrer">Dadidam</a>
                         </Footer>
                     </Layout>
                 </Layout>
